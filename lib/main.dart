@@ -1,15 +1,14 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
+import 'package:zerobalance/firebase_options.dart';
 import 'package:zerobalance/utils/initializer.dart';
 
-import 'screens/loginScreen.dart';
 
 void main() async {
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  await FlutterDisplayMode.setHighRefreshRate();
-
-  await Firebase.initializeApp();
+   WidgetsFlutterBinding.ensureInitialized();
+  // await FlutterDisplayMode.setHighRefreshRate();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
