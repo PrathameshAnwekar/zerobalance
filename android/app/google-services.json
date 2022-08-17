@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "770222304217",
+    "project_id": "zerobalance-8b44d",
+    "storage_bucket": "zerobalance-8b44d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770222304217:android:f43b059333ee109c8d07c8",
+        "android_client_info": {
+          "package_name": "com.example.zerobalance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770222304217-q16nk8ptdcpdnms8mpss6ekcteq5l67g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZJuGnyhbElk27REK-mucRZnHd2zAlZn8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "770222304217-q16nk8ptdcpdnms8mpss6ekcteq5l67g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
