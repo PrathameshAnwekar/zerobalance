@@ -44,6 +44,8 @@ dependencies:
   flutter_floating_bottom_bar: ^1.1.0
   bottom_navy_bar: ^6.0.0
   auto_size_text: ^3.0.0
+  connectivity_plus: ^2.3.6+1
+  flutter_riverpod: ^1.0.4
 
 dev_dependencies:
   flutter_test:
@@ -73,6 +75,7 @@ flutter:
     - assets/images/googleLogo.png
     - assets/images/yesBank.png
     - assets/images/RuPay.png
+    - assets/images/networkError.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

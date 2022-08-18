@@ -1,15 +1,21 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:zerobalance/firebase_options.dart';
 import 'package:zerobalance/utils/initializer.dart';
 
+import 'utils/connectivityService.dart';
+
+final connectionProvider =
+    StreamProvider.autoDispose((ref) => Connectivity().onConnectivityChanged);
 
 void main() async {
-   WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
   // await FlutterDisplayMode.setHighRefreshRate();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MyApp());
+  runApp(ProviderScope(child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
