@@ -35,9 +35,9 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           Column(
             children: [
-              Expanded(flex: 10,child: Container()),
-              Expanded(flex: 9, child: AuthForm()),
-              Expanded(flex: 1,
+              Expanded(flex: 40,child: Container()),
+              Expanded(flex: 50, child: AuthForm()),
+              Expanded(flex: 10,
                 child: Row(mainAxisAlignment: MainAxisAlignment.center,children: [
                   Text('Powered By  '),
                   Image.asset('assets/images/yesBank.png'),

@@ -46,10 +46,10 @@ class _HomeScreenTabState extends ConsumerState<HomeScreenTab> {
         builder: (context, snapshot) {
           final connectivityResult = snapshot.data;
           debugPrint(snapshot.data.toString());
-          if (connectivityResult == ConnectivityResult.none ||
-              connectivityResult == null) {
-            return NoNetworkScreen();
-          }
+          // if (connectivityResult == ConnectivityResult.none ||
+          //     connectivityResult == null) {
+          //   return NoNetworkScreen();
+          // }
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: customAppBar(context),
