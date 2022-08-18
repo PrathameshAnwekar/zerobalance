@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:zerobalance/constants/size_config.dart';
+import 'package:zerobalance/screens/loginScreen.dart';
 
 class NoNetworkScreen extends StatelessWidget {
   const NoNetworkScreen({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class NoNetworkScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.arrow_back),
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginScreen()));
             },
           ),
         
@@ -51,7 +52,7 @@ class NoNetworkScreen extends StatelessWidget {
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(primary: Colors.blue),
                 child: Text('Go Back'),
-                onPressed: () {},
+                onPressed: () { Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginScreen()));},
               ),
             ),
           ),

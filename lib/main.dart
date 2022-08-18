@@ -8,14 +8,12 @@ import 'package:zerobalance/utils/initializer.dart';
 
 import 'utils/connectivityService.dart';
 
-final connectionProvider =
-    StreamProvider.autoDispose((ref) => Connectivity().onConnectivityChanged);
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // await FlutterDisplayMode.setHighRefreshRate();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(ProviderScope(child: const MyApp()));
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -25,11 +23,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      
+      title: 'Zerobalance',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: InitializerWidget(),
+      home: const InitializerWidget(),
     );
   }
 }
+
+
+final connectionProvider =
+    StreamProvider.autoDispose((ref) => Connectivity().onConnectivityChanged);

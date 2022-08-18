@@ -33,7 +33,7 @@ class _HomeScreenTabState extends ConsumerState<HomeScreenTab> {
     super.dispose();
   }
 
-@override
+  @override
   void didChangeDependencies() {
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
@@ -80,22 +80,26 @@ class _HomeScreenTabState extends ConsumerState<HomeScreenTab> {
                     }),
                     items: [
                       BottomNavyBarItem(
-                        icon: Icon(Icons.apps),
+                        icon: Icon(Icons.home),
                         title: Text('Home'),
-                        activeColor: Colors.red,
+                        inactiveColor: Colors.grey,
+                        activeColor: Color.fromARGB(254, 48, 63, 159),
                       ),
                       BottomNavyBarItem(
                           icon: Icon(Icons.people),
-                          title: Text('Users'),
-                          activeColor: Colors.purpleAccent),
+                          title: Text('Card'),
+                          inactiveColor: Colors.grey,
+                          activeColor: Color.fromARGB(254, 48, 63, 159)),
                       BottomNavyBarItem(
                           icon: Icon(Icons.message),
-                          title: Text('Messages'),
-                          activeColor: Colors.pink),
+                          title: Text('Analytics'),
+                          inactiveColor: Colors.grey,
+                          activeColor: Color.fromARGB(254, 48, 63, 159)),
                       BottomNavyBarItem(
                           icon: Icon(Icons.settings),
-                          title: Text('Settings'),
-                          activeColor: Colors.blue),
+                          title: Text('Offers'),
+                          inactiveColor: Colors.grey,
+                          activeColor: Color.fromARGB(254, 48, 63, 159)),
                     ],
                   ),
                 ),
