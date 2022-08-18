@@ -33,11 +33,13 @@ class _AuthFormState extends State<AuthForm> {
     return Column(
       children: [
         ToggleSwitch(
+          borderColor: [Colors.black],
+
           minWidth: 90.0,
           cornerRadius: 20.0,
           initialLabelIndex: index,
           activeFgColor: Colors.white,
-          inactiveBgColor: Colors.transparent,
+          inactiveBgColor: Color.fromRGBO(115, 214, 255, 1),
           inactiveFgColor: Colors.black,
           totalSwitches: 2,
           labels: ['Login', 'Sign Up'],
@@ -172,18 +174,22 @@ class _AuthFormState extends State<AuthForm> {
             email: email, password: password);
         var user = result.user;
         print(user);
+        await Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => HomeScreenTab()));
       } else {
         var result = await auth.createUserWithEmailAndPassword(
             email: email, password: password);
         var user = result.user;
         print(user);
+        await Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => HomeScreenTab()));
       }
     } catch (e) {
       setState(() {
         isloading = false;
       });
       ScaffoldMessenger.of(ctx).showSnackBar(SnackBar(
-        content: Text(e.toString()),
+        content: Text(e.toString())
       ));
     }
   }

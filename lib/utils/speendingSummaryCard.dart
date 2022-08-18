@@ -14,7 +14,7 @@ class SummaryCard extends StatelessWidget {
       width: SizeConfig.screenWidth,
       child: Card(
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
           color: Color.fromARGB(254, 48, 63, 159),
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -58,7 +58,7 @@ class SummaryCard extends StatelessWidget {
                     ]),
                     Expanded(
                       child: Container(
-                        margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                        margin: EdgeInsets.fromLTRB(2, 0, 2, 10),
                         height: SizeConfig.screenHeight * 0.31,
                         child: Card(
                           shape: RoundedRectangleBorder(
@@ -69,15 +69,19 @@ class SummaryCard extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('Card Balance'),
-                                Text('₹1,500', style: TextStyle(fontSize: 25)),
+                                AutoSizeText('Card Balance',style: TextStyle(fontSize: 20)),
+                                AutoSizeText('₹1,500', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
                                 Expanded(child: Container(),),
                                 Row(
                                   children: [
                                     Expanded(child: Container(),),
-                                    FloatingActionButton(
-                                      onPressed: null,
-                                      child: Text('Add ₹'),
+                                    Container(
+                                      height: 100,width: 100,
+                                      child: FloatingActionButton(
+                                        backgroundColor: Color.fromARGB(254, 48, 63, 159),
+                                        onPressed: null,
+                                        child: Text('Add ₹'),
+                                      ),
                                     ),
                                   ],
                                 )
@@ -109,7 +113,7 @@ class CustomSmallCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10, 0, 10, 10),
+      margin: EdgeInsets.fromLTRB(2, 0, 2, 10),
       width: SizeConfig.screenWidth * 0.45,
       height: SizeConfig.screenHeight * 0.15,
       child: Card(
@@ -129,14 +133,14 @@ class CustomSmallCard extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15.0),
-                    child: Text(title),
+                    child: AutoSizeText(title,maxLines: 2, style: TextStyle(fontSize: 15)),
                   ),
                   Expanded(child: Container()),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 15.0),
                     child: AutoSizeText(
                       '₹' + amount,
-                      style: TextStyle(fontSize: 25),
+                      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
                     ),
                   )
                 ],

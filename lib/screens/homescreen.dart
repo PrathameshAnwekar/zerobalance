@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           SizedBox(height: 15,),
           const Padding(
-            padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 15),
+            padding: const EdgeInsets.fromLTRB(30.0,15,0,15),
             child: AutoSizeText(
               'You\'re doing\ngreat, keep it up.▲',
               style: TextStyle(fontSize: 23, fontWeight: FontWeight.bold),
@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(height: 15,),
           const SummaryCard(),
           Padding(
-            padding: const EdgeInsets.all(15.0),
+            padding: const EdgeInsets.fromLTRB(30.0,15,0,15),
             child: const Text(
               'Categories',
               style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold),
@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
             scrollDirection: Axis.horizontal,
             child: Row(
               
-              children: [
+              children: const [
                 CategoryCard(
                   title: 'Food',
                   icon: Icons.local_pizza,
@@ -68,7 +68,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-          ),
+          ),   Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Text('Turn off mobile data and wifi for the error screen, turn on again to revert back to this', style: TextStyle(color: Colors.black),),
+          )  ,           Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Text('Rest of the widgets seemed a bit redundant for the task, let me know if you want them too :)', style: TextStyle(color: Colors.black),),
+          )
+,
           SizedBox(
             height: 200,
           )
