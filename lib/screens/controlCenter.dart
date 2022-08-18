@@ -121,7 +121,7 @@ class SettingsCard extends StatelessWidget {
       child: Container(
         margin: EdgeInsets.all(10),
         width: SizeConfig.screenWidth * 0.4,
-        height: (SizeConfig.screenHeight * hm) + (value > 0 ? 20 : 0),
+        height: (SizeConfig.screenHeight * hm) ,
         decoration: BoxDecoration(
             border: Border.all(color: Colors.grey.shade400),
             borderRadius: BorderRadius.all(Radius.circular(20))),

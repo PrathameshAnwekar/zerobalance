@@ -14,13 +14,12 @@ AppBar customAppBar(BuildContext context) {
               Icons.grid_view_outlined,
               color: Colors.black,
               size: 30,
-            ))
+            )), SizedBox(width: 20,)
       ],
-      leading: const Padding(
-        padding: EdgeInsets.all(5.0),
+      leading:  Container(
+        padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
         child: CircleAvatar(
-          minRadius: 15,
-          maxRadius: 15,
+          backgroundImage: AssetImage('assets/images/randomProfilePic.png'),
         ),
       ),
       elevation: 0.5,
