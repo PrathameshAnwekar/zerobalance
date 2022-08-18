@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:toggle_switch/toggle_switch.dart';
 import 'package:zerobalance/constants/size_config.dart';
+import 'package:zerobalance/screens/homescreenTab.dart';
 
 class AuthForm extends StatefulWidget {
   const AuthForm({
@@ -80,7 +81,6 @@ class _AuthFormState extends State<AuthForm> {
                           hintStyle: TextStyle(color: Colors.black),
                           labelStyle: TextStyle(color: Colors.black)),
                     ),
-                    
                     TextFormField(
                       key: const ValueKey('password'),
                       onSaved: (newValue) {
@@ -137,7 +137,6 @@ class _AuthFormState extends State<AuthForm> {
                         ),
                         onPressed: () async {
                           await signUp();
-
                         },
                       ),
                     ),
@@ -155,15 +154,15 @@ class _AuthFormState extends State<AuthForm> {
 
     if (isValid) {
       _formKey.currentState!.save();
-      submitForm( _userPassword, _userEmail.trim(), isLogin, context);
+      submitForm(_userPassword, _userEmail.trim(), isLogin, context);
       print('Form is valid');
     } else {
       print('Form is invalid');
     }
   }
 
-  void submitForm( String password, String email, bool isLogin,
-      BuildContext ctx) async {
+  void submitForm(
+      String password, String email, bool isLogin, BuildContext ctx) async {
     try {
       setState(() {
         isloading = true;
@@ -207,7 +206,8 @@ class _AuthFormState extends State<AuthForm> {
       UserCredential result = await auth.signInWithCredential(authCredential);
       user = result.user;
 
-      // Navigator.of(context).pushReplacementNamed(MainScreen.routeName);
+      await Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (context) => HomeScreenTab()));
     }
   }
 }
